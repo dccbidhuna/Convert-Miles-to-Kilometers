@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miles to Kilometers Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3;
+            padding: 0.5rem 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .content {
+            flex: 3;
+            padding: 1rem;
+        }
+        .adsense {
+            flex: 1;
+            padding: 1rem;
+            text-align: center;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 0 1rem;
+        }
+        h1, h2 {
+            color: #007bff;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #007bff;
+            color: white;
+            margin-top: 2rem;
+        }
+        .responsive {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="adsense" id="header-adsense">
+        <!-- Google AdSense Code for Header -->
+        <p>Header Ad Space</p>
+    </div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+    <main class="container">
+        <div class="adsense" id="left-adsense">
+            <!-- Google AdSense Code for Left Sidebar -->
+            <p>Ad Space</p>
+        </div>
+        <div class="content">
+            <section id="converter">
+                <h2>Convert Miles to Kilometers or Kilometers to Miles</h2>
+                <p>Enter a value and choose the conversion type.</p>
+                <label for="value">Value:</label>
+                <input type="number" id="value" placeholder="Enter value">
+                <label for="conversion">Conversion Type:</label>
+                <select id="conversion">
+                    <option value="milesToKm">Miles to Kilometers</option>
+                    <option value="kmToMiles">Kilometers to Miles</option>
+                </select>
+                <button onclick="convert()">Convert</button>
+                <p id="result"></p>
+            </section>
+
+            <section id="about">
+                <h2>About Us</h2>
+                <p>Welcome to the Miles to Kilometers Converter. This tool is designed to help you quickly convert values between miles and kilometers or vice versa.</p>
+            </section>
+
+            <section id="blog">
+                <h2>How to Convert</h2>
+                <p>For converting miles to kilometers, use the formula:</p>
+                <p><strong>1 mile = 1.60934 kilometers</strong></p>
+                <p>To convert kilometers to miles, use the formula:</p>
+                <p><strong>1 kilometer = 0.621371 miles</strong></p>
+                <p>Examples:</p>
+                <ul>
+                    <li>5 miles × 1.60934 = 8.0467 kilometers</li>
+                    <li>10 kilometers × 0.621371 = 6.21371 miles</li>
+                </ul>
+            </section>
+
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <p>If you have any questions or feedback, feel free to contact us at <a href="mailto:info@example.com">info@example.com</a>.</p>
+            </section>
+        </div>
+        <div class="adsense" id="right-adsense">
+            <!-- Google AdSense Code for Right Sidebar -->
+            <p>Ad Space</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Miles to Kilometers Converter. All Rights Reserved.</p>
+    </footer>
+    <script>
+        function convert() {
+            const value = parseFloat(document.getElementById("value").value);
+            const conversionType = document.getElementById("conversion").value;
+            let result;
+
+            if (conversionType === "milesToKm") {
+                result = (value * 1.60934).toFixed(2);
+                document.getElementById("result").textContent = `${value} miles is equal to ${result} kilometers.`;
+            } else if (conversionType === "kmToMiles") {
+                result = (value * 0.621371).toFixed(2);
+                document.getElementById("result").textContent = `${value} kilometers is equal to ${result} miles.`;
+            } else {
+                document.getElementById("result").textContent = "Please select a valid conversion type.";
+            }
+        }
+    </script>
+</body>
+</html>
